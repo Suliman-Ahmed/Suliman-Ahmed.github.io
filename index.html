@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suliman Ahmed</title>
+<meta name="description" content="Suliman Ahmed — Flutter and Odoo developer in Iraq building e-commerce apps and the systems behind them.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap">
+<style>
+/* VOICE calm, product-like, Apple-clean
+   IDEA a shipped shopping app: the portfolio opens on the app itself, live order notes floating beside it
+   PICTURE an iPhone showing a store screen and checkout, with three notification cards (Odoo, delivery, AI agent)
+   COLOUR white ground, near-black ink, one electric blue accent, soft blue-grey surface; same idea at night
+   TYPE SF / system sans, light weights, slim sizes
+   LAYOUT laptop: text left, phone right; phone: title, phone, buttons */
+:root{color-scheme:light dark;--bg:light-dark(#ffffff,#0b0c10);--ink:light-dark(#101114,#eceef3);--mute:light-dark(#6b7080,#9298a8);--line:light-dark(#ebedf2,#1e2029);--soft:light-dark(#f3f5fa,#14161d);--blue:#1f5bff;--blue2:light-dark(#e8eeff,#16204a)}
+:root[data-theme=light]{color-scheme:light}:root[data-theme=dark]{color-scheme:dark}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;overflow-x:clip;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.band{padding-block:clamp(32px,5vw,80px);padding-left:max(5vw,16px);padding-right:max(5vw,16px)}
+.wrap{max-width:1140px;margin:0 auto}
+nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:saturate(1.6) blur(14px);-webkit-backdrop-filter:saturate(1.6) blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 20px;padding:12px max(5vw,16px)}
+nav .me{font-weight:600;text-decoration:none;font-size:15px}
+nav ul{display:flex;flex-wrap:wrap;gap:0 22px;list-style:none;margin:0;padding:0}
+nav ul a{text-decoration:none;color:var(--mute);font-size:14px;display:inline-block;padding:10px 0}
+nav ul a:hover{color:var(--ink)}
+a:focus-visible{outline:2px solid var(--blue);outline-offset:3px;border-radius:6px}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:40px 56px;align-items:center}
+.hi{font-size:15px;color:var(--mute);margin:0 0 14px}
+h1{font-size:clamp(34px,4.8vw,54px);line-height:1.06;letter-spacing:-.025em;font-weight:600;margin:0;text-wrap:balance}
+h1 span{color:var(--mute);font-weight:400}
+.lede{color:var(--mute);font-size:17px;margin:20px 0 0;max-width:44ch}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border-radius:999px;text-decoration:none;font-size:15px;font-weight:500;border:1px solid var(--line);white-space:nowrap}
+.btn svg{width:17px;height:17px}
+.btn.main{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.btn:hover{border-color:var(--mute)}
+.stage{position:relative;display:flex;justify-content:center;padding:10px 0 20px}
+.stage::before{content:"";position:absolute;inset:6% 4% 0;border-radius:40px;background:linear-gradient(160deg,var(--blue2),transparent 75%)}
+.phone{position:relative;width:min(290px,78vw);aspect-ratio:9/19;border-radius:46px;background:#111;padding:11px;box-shadow:0 30px 60px -30px rgba(16,24,64,.45),inset 0 0 0 2px #2a2c33}
+.scr{height:100%;border-radius:36px;background:#fff;color:#101114;overflow:hidden;display:flex;flex-direction:column;font-size:12px;position:relative}
+.isl{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:84px;height:24px;border-radius:14px;background:#111}
+.bar{display:flex;justify-content:space-between;padding:12px 22px 0;font-weight:600;font-size:12px}
+.top{padding:16px 16px 8px}
+.top b{font-size:19px;letter-spacing:-.01em}
+.search{margin-top:10px;background:#f1f3f7;border-radius:10px;padding:8px 10px;color:#8a8f9c}
+.chips{display:flex;gap:6px;padding:4px 16px 10px;overflow:hidden}
+.chips span{flex:none;padding:5px 10px;border-radius:999px;background:#f1f3f7;font-size:11px}
+.chips span:first-child{background:#101114;color:#fff}
+.prods{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 16px;flex:1}
+.p{display:flex;flex-direction:column;gap:3px}
+.pi{aspect-ratio:1;border-radius:12px;display:grid;place-items:center}
+.pi svg{width:46%;height:46%}
+.p em{font-style:normal;font-size:11px;line-height:1.25}
+.p strong{font-size:11px}
+.cart{margin:10px 12px 14px;background:#101114;color:#fff;border-radius:16px;padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.cart small{display:block;color:#a8adba;font-size:10px}
+.cart span{background:var(--blue);border-radius:10px;padding:7px 11px;font-weight:600;white-space:nowrap}
+.note{position:absolute;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:0 14px 30px -18px rgba(16,24,64,.35);font-size:13px;line-height:1.35;display:flex;gap:10px;align-items:center;max-width:230px}
+.note i{flex:none;width:30px;height:30px;border-radius:9px;display:grid;place-items:center;font-style:normal;font-weight:700;font-size:12px;color:#fff}
+.note small{display:block;color:var(--mute);font-size:12px}
+.dev{position:relative}.note{width:max-content}.n1{top:14%;right:calc(100% - 28px)}.n2{top:45%;left:calc(100% - 28px)}.n3{bottom:24%;right:calc(100% - 28px)}
+.n3 small{direction:rtl;text-align:right}
+@media(prefers-reduced-motion:no-preference){.note{animation:up .7s both}.n2{animation-delay:.25s}.n3{animation-delay:.5s}}
+@keyframes up{from{opacity:0;transform:translateY(10px)}}
+h2{font-size:clamp(26px,3vw,34px);line-height:1.1;letter-spacing:-.02em;font-weight:600;margin:0 0 6px}
+.sub{color:var(--mute);margin:0 0 28px;max-width:58ch}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.6fr);gap:6px 40px;padding:24px 0;border-bottom:1px solid var(--line)}
+.row h3 a{text-decoration:none;border-bottom:1px solid var(--blue)}.row h3 a:hover{color:var(--blue)}
+.row h3{margin:0;font-size:19px;font-weight:600;letter-spacing:-.01em}
+.row .k{color:var(--blue);font-size:13px;font-weight:500;margin-top:2px}
+.row p{margin:0;color:var(--mute)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.tags span{font-size:12.5px;padding:3px 10px;border-radius:999px;background:var(--soft)}
+.early{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:12px}
+.early a{display:block;padding:16px 18px;border-radius:14px;background:var(--soft);text-decoration:none}
+.early a b{display:block;font-weight:600;font-size:15px}
+.early a span{color:var(--mute);font-size:14px}
+.early a:hover b{color:var(--blue)}
+.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:28px 56px}
+.about p{margin:0 0 12px;color:var(--mute);max-width:56ch}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,200px),1fr));gap:22px 32px}
+.skills h3{margin:0 0 4px;font-size:15px;font-weight:600}
+.skills p{margin:0;color:var(--mute);font-size:15px}
+.contact{background:var(--soft)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:12px;margin-top:24px}
+.cards a{display:flex;gap:14px;align-items:center;padding:18px;border-radius:16px;background:var(--bg);border:1px solid var(--line);text-decoration:none}
+.cards a:hover{border-color:var(--blue)}
+.cards svg{flex:none;width:22px;height:22px;color:var(--blue)}
+.cards small{display:block;color:var(--mute);font-size:13px}
+.cards b{font-weight:500;overflow-wrap:anywhere}
+footer{color:var(--mute);font-size:13px;margin-top:40px}
+@media(max-width:860px){.hero,.two{grid-template-columns:minmax(0,1fr)}.row{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:1000px) and (min-width:861px){.note{max-width:180px;font-size:12px}}
+@media(max-width:600px){.dev{display:flex;flex-direction:column;align-items:center;gap:10px}.note{position:static;max-width:none;width:min(290px,78vw)}.n1{order:-1}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.phones{display:flex;gap:12px;margin-top:18px;overflow-x:auto;padding-bottom:4px}
+.phones img{flex:none;width:min(31%,180px);height:auto;border-radius:16px;background:var(--soft)}
+.web{display:block;margin-top:18px;border:1px solid var(--line);border-radius:14px;overflow:hidden;text-decoration:none;background:var(--soft);max-width:620px}
+.web .dots{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line)}
+.web .dots i{width:9px;height:9px;border-radius:50%;background:color-mix(in srgb,var(--mute) 40%,transparent)}
+.web .dots b{font-weight:400;font-size:12px;color:var(--mute);margin-inline-start:8px}
+.web img,.web video{display:block;width:100%;height:auto}
+.web:hover{border-color:var(--blue)}
+@media(max-width:600px){.phones img{width:150px}}
+h1 .h1a{color:inherit;font-weight:600}
+.lang{min-height:40px;padding:0 14px;border-radius:999px;border:1px solid var(--line);background:none;color:var(--ink);font:inherit;font-size:14px;cursor:pointer}
+.lang:hover{border-color:var(--mute)}.lang:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+nav ul{align-items:center}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:14px}
+.sv{background:var(--soft);border-radius:18px;padding:22px;display:flex;flex-direction:column;gap:10px}
+.sv h3{margin:0;font-size:18px;font-weight:600}
+.sv p{margin:0;color:var(--mute);font-size:15px}
+.sv .tags{margin-top:auto}.sv .tags span{background:var(--bg)}
+.ask{color:var(--blue);text-decoration:none;font-size:14px;font-weight:500;padding-top:6px}
+.ask:hover{text-decoration:underline}
+:root:lang(ar) body{font-family:"Bahij Janna","IBM Plex Sans Arabic",-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Tahoma,sans-serif}
+:root:lang(ar) h1,:root:lang(ar) h2{letter-spacing:0;line-height:1.3}
+:root:lang(ar) .ask{direction:rtl}
+:root:lang(ar) .note{direction:rtl;text-align:right}
+[dir=rtl] .ask{unicode-bidi:plaintext}
+</style>
+</head>
+<body>
+
+<nav aria-label="Main"><div class="wrap">
+  <a class="me" href="#top" data-t="name">Suliman Ahmed</a>
+  <ul>
+    <li><a href="#services" data-t="navServices">Services</a></li>
+    <li><a href="#work" data-t="navWork">Work</a></li>
+    <li><a href="#about" data-t="navAbout">About</a></li>
+    <li><a href="#contact" data-t="navContact">Contact</a></li>
+    <li><button class="lang" id="lang" type="button" lang="ar">العربية</button></li>
+  </ul>
+</div></nav>
+
+<header class="band" id="top">
+  <div class="wrap hero">
+    <div>
+      <p class="hi" data-t="hi">Suliman Ahmed, Iraq</p>
+      <h1><span class="h1a" data-t="h1a">Flutter &amp; Odoo developer.</span> <span data-t="h1b">I build shopping apps and the systems behind them.</span></h1>
+      <p class="lede" data-t="lede">From the checkout button on a customer’s phone to the ERP, the delivery company and the customer-service agent.</p>
+      <div class="cta">
+        <a class="btn main" href="mailto:dev.suliaman@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><span data-t="email">Email me</span></a>
+        <a class="btn" href="https://wa.me/9647838160077"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>WhatsApp</a>
+        <a class="btn" href="https://github.com/Suliman-Ahmed"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 2.9.8.1-.6.4-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c2-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2z"/></svg>GitHub</a>
+      </div>
+    </div>
+
+    <div class="stage" data-ta="stage" aria-label="Illustration: a shopping app at checkout with order notes from Odoo, delivery and the AI agent">
+      <div class="dev" dir="ltr"><div class="phone"><div class="scr">
+        <div class="isl"></div>
+        <div class="bar"><span>9:41</span><span>5G</span></div>
+        <div class="top"><b>Discover</b><div class="search">Search products</div></div>
+        <div class="chips"><span>All</span><span>Phones</span><span>Audio</span><span>Gaming</span><span>Watches</span></div>
+        <div class="prods" id="prods"></div>
+        <div class="cart"><div>3 items<small>IQD 245,000</small></div><span>Checkout</span></div>
+      </div></div>
+      <div class="note n1"><i style="background:#714b67">O</i><div><span data-t="n1">Order synced to Odoo</span><small data-t="n1s">Invoice and stock updated</small></div></div>
+      <div class="note n2"><i style="background:#16a34a">D</i><div><span data-t="n2">Delivery to Basra</span><small data-t="n2s">IQD 5,000, tracking on</small></div></div>
+      <div class="note n3"><i style="background:var(--blue)">AI</i><div><span data-t="n3">AI Agent replied</span><small>هلا بيك، المنتج متوفر</small></div></div>
+    </div></div>
+  </div>
+</header>
+
+<main>
+  <section class="band" id="services" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-t="svcH">What I can build for you</h2>
+      <p class="sub" data-t="svcS">Four kinds of project I deliver end to end, from design to launch and support.</p>
+      <div class="svc" id="svc"></div>
+    </div>
+  </section>
+
+  <section class="band" id="work" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-t="workH">Selected work</h2>
+      <p class="sub" data-t="workS">Production systems I built and maintain for businesses in Iraq.</p>
+      <div class="rows" id="workRows"></div>
+    </div>
+  </section>
+
+  <section class="band" id="projects" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-t="earlyH">Earlier projects</h2>
+      <p class="sub" data-t="earlyS">Open-source work from university and my first years building apps.</p>
+      <div class="early" id="early"></div>
+    </div>
+  </section>
+
+  <section class="band" id="about" style="padding-top:0">
+    <div class="wrap two">
+      <div class="about">
+        <h2 data-t="aboutH">About</h2>
+        <p data-t="about1">I studied Mobile Computing and Communication Engineering and started with Android and web apps. Today most of my work sits where a store’s app meets its back office.</p>
+        <p data-t="about2">I care about what customers feel: a checkout that works first time, delivery prices that match the address, and replies that sound like someone from Iraq.</p>
+      </div>
+      <div class="skills" id="skills"></div>
+    </div>
+  </section>
+</main>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <h2 data-t="cH">Let’s work together</h2>
+    <p class="sub" style="margin-bottom:0" data-t="cS">Tell me about your project on WhatsApp or by email. I reply the same day.</p>
+    <div class="cards">
+      <a href="mailto:dev.suliaman@gmail.com"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><small data-t="cEmail">Email</small><b dir="ltr">dev.suliaman@gmail.com</b></div></a>
+      <a href="https://wa.me/9647838160077"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg><div><small data-t="cPhone">Phone and WhatsApp</small><b dir="ltr">+964 783 816 0077</b></div></a>
+      <a href="https://github.com/Suliman-Ahmed"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.8 2.3 5.8 2.6 5.8 2.6a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.4 9c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2v3.5"/></svg><div><small>GitHub</small><b dir="ltr">Suliman-Ahmed</b></div></a>
+    </div>
+    <footer data-t="foot">© 2026 Suliman Ahmed</footer>
+  </div>
+</section>
+
+<script>
+{
+const T={
+en:{name:"Suliman Ahmed",navServices:"Services",navWork:"Work",navAbout:"About",navContact:"Contact",hi:"Suliman Ahmed, Iraq",h1a:"Flutter & Odoo developer.",h1b:"I build shopping apps and the systems behind them.",lede:"From the checkout button on a customer’s phone to the ERP, the delivery company and the customer-service agent.",email:"Email me",n1:"Order synced to Odoo",n1s:"Invoice and stock updated",n2:"Delivery to Basra",n2s:"IQD 5,000, tracking on",n3:"AI Agent replied",svcH:"What I can build for you",svcS:"Four kinds of project I deliver end to end, from design to launch and support.",workH:"Selected work",workS:"Production systems I built and maintain for businesses in Iraq.",earlyH:"Earlier projects",earlyS:"Open-source work from university and my first years building apps.",aboutH:"About",about1:"I studied Mobile Computing and Communication Engineering and started with Android and web apps. Today most of my work sits where a store’s app meets its back office.",about2:"I care about what customers feel: a checkout that works first time, delivery prices that match the address, and replies that sound like someone from Iraq.",cH:"Let’s work together",cS:"Tell me about your project on WhatsApp or by email. I reply the same day.",cEmail:"Email",cPhone:"Phone and WhatsApp",foot:"© 2026 Suliman Ahmed",ask:"Ask about this",title:"Suliman Ahmed"},
+ar:{name:"سليمان أحمد",navServices:"الخدمات",navWork:"الأعمال",navAbout:"عني",navContact:"تواصل",hi:"سليمان أحمد، العراق",h1a:"مطوّر Flutter و Odoo.",h1b:"أبني تطبيقات المتاجر والأنظمة اللي وراها.",lede:"من زر الدفع على تلفون الزبون، إلى نظام الحسابات والمخزون، وشركة التوصيل، ووكيل خدمة الزبائن.",email:"راسلني بالإيميل",n1:"الطلب وصل لـ Odoo",n1s:"الفاتورة والمخزون تحدّثوا",n2:"توصيل للبصرة",n2s:"5,000 دينار، والتتبع شغّال",n3:"الوكيل الذكي ردّ",svcH:"شنو أكدر أبنيلك",svcS:"أربع أنواع مشاريع أسلّمها كاملة، من التصميم إلى الإطلاق والدعم.",workH:"أبرز الأعمال",workS:"أنظمة شغّالة بنيتها وأتابعها لشركات بالعراق.",earlyH:"مشاريع سابقة",earlyS:"مشاريع مفتوحة المصدر من أيام الجامعة وأول سنين البرمجة.",aboutH:"عني",about1:"درست هندسة الحوسبة المتنقلة والاتصالات، وبديت بتطبيقات أندرويد والويب. اليوم أغلب شغلي بالنقطة اللي يلتقي بيها تطبيق المتجر مع إدارته من الداخل.",about2:"يهمني اللي يحس بيه الزبون: دفع ينجح من أول مرة، وسعر توصيل مضبوط حسب العنوان، وردود تحس بيها تحچي ويا واحد عراقي.",cH:"خلّي نشتغل سوا",cS:"احچيلي عن مشروعك على الواتساب أو الإيميل، وأرد عليك بنفس اليوم.",cEmail:"الإيميل",cPhone:"الهاتف والواتساب",foot:"© 2026 سليمان أحمد",ask:"اسأل عنها",title:"سليمان أحمد"}
+};
+const svc={
+en:[["Shopping app","A Flutter app for Android and iOS: catalogue, cart, card payments and cash on delivery, push notifications, and publishing on both stores.",["Flutter","iOS","Android"]],
+["Online store","A fast web store connected to your stock and accounting, with delivery prices by governorate and orders landing straight in your system.",["Next.js","Shopify","Odoo"]],
+["Odoo modules","Custom Odoo 19 modules and integrations: delivery companies, payment gateways, mobile APIs, invoices and reports.",["Odoo 19","Python","APIs"]],
+["AI agent","A customer-service agent that answers on Instagram and WhatsApp in Iraqi Arabic, knows your products or appointments, and hands hard cases to your team.",["Instagram","WhatsApp","AI"]]],
+ar:[["تطبيق متجر","تطبيق Flutter للأندرويد والآيفون: منتجات وسلة، دفع بالبطاقة أو عند الاستلام، إشعارات، ونشر على المتجرين.",["Flutter","iOS","Android"]],
+["متجر إلكتروني","موقع متجر سريع مربوط بالمخزون والحسابات، بأسعار توصيل حسب المحافظة، والطلبات توصل مباشرة لنظامك.",["Next.js","Shopify","Odoo"]],
+["موديولات Odoo","موديولات وربط مخصص لـ Odoo 19: شركات التوصيل، بوابات الدفع، API للتطبيقات، الفواتير والتقارير.",["Odoo 19","Python","APIs"]],
+["وكيل ذكاء اصطناعي","وكيل خدمة زبائن يرد على الإنستغرام والواتساب باللهجة العراقية، يعرف منتجاتك أو مواعيدك، ويحوّل الحالات الصعبة لفريقك.",["Instagram","WhatsApp","AI"]]]
+};
+const work={
+en:[["My product","Wakeelk (وكيلك)","An AI agent that answers customers on Instagram and WhatsApp around the clock, in Iraqi Arabic. It books appointments for clinics and helps stores sell.",["AI agent","WhatsApp","Instagram","AWS"],"https://wakeelkiq.com",["img/wakeelk.jpg"]],
+["Mobile app","EStore shopping app","Shopping app for Android and iOS with online payment and cash on delivery.",["Flutter","Dart","iOS","Android","Odoo 19","REST API"],"https://estore.iq/download",["img/estore-home.jpg","img/estore-shop.jpg","img/estore-details.jpg"]],
+["Online store","Manovate.iq","A fast online store built from scratch and connected to Odoo. It stayed up through a big sale.",["Next.js","TypeScript","Cloudflare Workers","R2","Odoo 19"],"https://manovate.iq",["img/manovate.mp4"]],
+["AI","EStore AI agent","Customer-service agent on Instagram that finds products and replies in Iraqi Arabic.",["AI agent","Instagram","Odoo 19"]],
+["Integrations","Odoo integrations","Connecting Odoo with online stores, mobile apps and delivery companies.",["Odoo 19","Shopify","Python","Webhooks"]],
+["Odoo modules","Back-office tools","Custom Odoo modules for invoices, reports and day-to-day store operations.",["Odoo 19","Python","QWeb","Odoo.sh"]]],
+ar:[["منتجي الخاص","وكيلك","وكيل ذكاء اصطناعي يرد على الزبائن بالإنستغرام والواتساب طول اليوم، باللهجة العراقية. يحجز المواعيد للعيادات ويساعد المتاجر تبيع.",["AI agent","WhatsApp","Instagram","AWS"],"https://wakeelkiq.com",["img/wakeelk.jpg"]],
+["تطبيق موبايل","تطبيق EStore","تطبيق تسوّق للأندرويد والآيفون، بدفع إلكتروني أو عند الاستلام.",["Flutter","Dart","iOS","Android","Odoo 19","REST API"],"https://estore.iq/download",["img/estore-home.jpg","img/estore-shop.jpg","img/estore-details.jpg"]],
+["متجر إلكتروني","Manovate.iq","متجر إلكتروني سريع مبني من الصفر ومربوط بـ Odoo، وبقى شغّال بأيام العروض الكبيرة.",["Next.js","TypeScript","Cloudflare Workers","R2","Odoo 19"],"https://manovate.iq",["img/manovate.mp4"]],
+["ذكاء اصطناعي","وكيل EStore الذكي","وكيل خدمة زبائن على الإنستغرام يلكه المنتجات ويرد باللهجة العراقية.",["AI agent","Instagram","Odoo 19"]],
+["ربط أنظمة","ربط Odoo","ربط Odoo مع المتاجر الإلكترونية وتطبيقات الموبايل وشركات التوصيل.",["Odoo 19","Shopify","Python","Webhooks"]],
+["موديولات Odoo","أدوات الإدارة","موديولات Odoo مخصصة للفواتير والتقارير وشغل المتجر اليومي.",["Odoo 19","Python","QWeb","Odoo.sh"]]]
+};
+const early={en:[["FaceRecSDcard","Face recognition on ESP32-CAM"],["Arduino-Car-Bluetooth","Bluetooth-controlled Arduino car"],["Flutter-with-GPS","Shows your live location"],["Instagram-Clone","Instagram UI in Flutter"],["Khana-Mobile-App","Mobile app in Flutter"],["Odoo","Flutter WebView for an Odoo site"]],
+ar:[["FaceRecSDcard","تمييز الوجوه على ESP32-CAM"],["Arduino-Car-Bluetooth","سيارة أردوينو تتحكم بيها بالبلوتوث"],["Flutter-with-GPS","يعرض موقعك المباشر"],["Instagram-Clone","واجهة إنستغرام بـ Flutter"],["Khana-Mobile-App","تطبيق موبايل بـ Flutter"],["Odoo","تطبيق WebView لموقع Odoo"]]};
+const skills={en:[["Mobile","Flutter, Dart, Android with Java and Kotlin"],["ERP","Odoo 19 Enterprise, Python, QWeb, Odoo.sh"],["Commerce","Shopify and Liquid, payments, cash on delivery, delivery pricing"],["Integrations","REST APIs, webhooks, OAuth, Telegram bots, AI agents"],["Web","Next.js, React, TypeScript, HTML and CSS"],["Cloud","AWS, Cloudflare Workers, R2"],["Hardware","Arduino, ESP32-CAM"]],
+ar:[["موبايل","Flutter و Dart، وأندرويد بـ Java و Kotlin"],["أنظمة ERP","Odoo 19 Enterprise و Python و QWeb و Odoo.sh"],["تجارة إلكترونية","Shopify و Liquid، الدفع الإلكتروني، الدفع عند الاستلام، أسعار التوصيل"],["ربط الأنظمة","REST APIs و Webhooks و OAuth، بوتات تيليغرام، وكلاء ذكاء اصطناعي"],["ويب","Next.js و React و TypeScript و HTML و CSS"],["سحابة","AWS و Cloudflare Workers و R2"],["هاردوير","Arduino و ESP32-CAM"]]};
+const prods=[
+  ["#eef2ff","#1f5bff","AirPods Pro 2","IQD 285,000",'<path d="M8 4a3 3 0 0 0-3 3v4a2 2 0 0 0 4 0V7M16 4a3 3 0 0 1 3 3v4a2 2 0 0 1-4 0V7" /><path d="M7 13v7M17 13v7"/>'],
+  ["#fff4e6","#ea580c","DualSense controller","IQD 95,000",'<path d="M7 8h10a4 4 0 0 1 4 4l-1 5a2 2 0 0 1-3.5 1L15 16H9l-1.5 2A2 2 0 0 1 4 17l-1-5a4 4 0 0 1 4-4z"/><path d="M8 11v3M6.5 12.5h3"/>'],
+  ["#ecfdf3","#16a34a","Galaxy Watch 7","IQD 340,000",'<rect x="7" y="7" width="10" height="10" rx="3"/><path d="M9 7V3h6v4M9 17v4h6v-4"/>'],
+  ["#fdf2f8","#db2777","iPhone 16 case","IQD 25,000",'<rect x="7" y="3" width="10" height="18" rx="2.5"/><circle cx="10" cy="6.5" r="1.2"/>']
+];
+document.getElementById("prods").innerHTML=prods.map(([bg,c,n,p,g])=>`<div class="p"><div class="pi" style="background:${bg}"><svg viewBox="0 0 24 24" fill="none" stroke="${c}" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${g}</svg></div><em>${n}</em><strong>${p}</strong></div>`).join("");
+const wa="https://wa.me/9647838160077?text=";
+const calm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+function shots(im,ti,u){
+  if(im.length>1)return `<div class="phones" dir="ltr">${im.map((s,i)=>`<img src="${s}" alt="${ti}, screen ${i+1}" loading="lazy" width="341" height="740">`).join("")}</div>`;
+  return `<a class="web" href="${u}" dir="ltr"><span class="dots"><i></i><i></i><i></i><b>${u.replace("https://","")}</b></span>${im[0].endsWith(".mp4")?`<video src="${im[0]}" poster="${im[0].replace(".mp4",".jpg")}" ${calm?"controls":"autoplay loop"} muted playsinline preload="metadata" width="906" height="482" aria-label="${ti} website, scrolling"></video>`:`<img src="${im[0]}" alt="${ti} website" loading="lazy" width="1058" height="524">`}</a>`;
+}
+function render(L){
+  const t=T[L];
+  document.documentElement.lang=L;document.documentElement.dir=L==="ar"?"rtl":"ltr";document.title=t.title;
+  document.querySelectorAll("[data-t]").forEach(e=>{if(t[e.dataset.t])e.textContent=t[e.dataset.t]});
+  const b=document.getElementById("lang");b.textContent=L==="ar"?"English":"العربية";b.lang=L==="ar"?"en":"ar";
+  document.getElementById("svc").innerHTML=svc[L].map(([h,d,g])=>`<article class="sv"><h3>${h}</h3><p>${d}</p><div class="tags">${g.map(x=>`<span>${x}</span>`).join("")}</div><a class="ask" href="${wa+encodeURIComponent(h)}">${t.ask} ${L==="ar"?"←":"→"}</a></article>`).join("");
+  document.getElementById("workRows").innerHTML=work[L].map(([k,ti,d,g,u,im])=>`<article class="row"><div><h3>${u?`<a href="${u}">${ti}</a>`:ti}</h3><div class="k">${k}</div></div><div><p>${d}</p><div class="tags" dir="ltr">${g.map(x=>`<span>${x}</span>`).join("")}</div>${im?shots(im,ti,u):""}</div></article>`).join("");
+  document.getElementById("early").innerHTML=early[L].map(([n,s])=>`<a href="https://github.com/Suliman-Ahmed/${n}"><b dir="ltr">${n}</b><span>${s}</span></a>`).join("");
+  document.getElementById("skills").innerHTML=skills[L].map(([h,p])=>`<div><h3>${h}</h3><p>${p}</p></div>`).join("");
+}
+let L="en";
+try{L=localStorage.getItem("lang")||(location.hash==="#ar"?"ar":(navigator.language||"").startsWith("ar")?"ar":"en")}catch(e){}
+if(location.hash==="#ar")L="ar";
+render(L);
+document.getElementById("lang").addEventListener("click",()=>{L=L==="ar"?"en":"ar";try{localStorage.setItem("lang",L)}catch(e){}render(L)});
+}
+</script>
+</body>
+</html>
